@@ -1,0 +1,21 @@
+<h2>List</h2>
+
+<!-- on a écrit loading meme sans internet et donc avec une requête échoué -->
+<!-- s'il est different de todoList  -->
+<div *ngIf="!todoList && !error">Loading!! </div>
+
+<!-- créer un bouton et qui s'affiche quand on a la condition davoir
+   une erreur -->
+   <!-- lui ajouter un event binding-->
+   <!-- "error" c'est une variable-->
+<button *ngIf="error" (click)="retry()" >Retry</button>
+
+
+<ul *ngFor="let todo of todoList ">
+  <li>
+    {{todo.name}}
+    {{todo.description}}
+  </li>
+  <button (click)="delete(todo)">Delete</button>
+</ul>
+

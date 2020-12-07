@@ -1,0 +1,19 @@
+<h2>Creat Your List</h2>
+
+<form [formGroup]="formTodo" (ngSubmit)="save()">  
+    <ion-item>
+        <ion-label>Todo</ion-label>
+        <ion-input formControlName="name"></ion-input>
+        <span *ngIf="!formTodo.get('name').valid && formTodo.get('name').dirty" class="validFalse"> 
+            Name is required
+        </span>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+
+    <button ion-button type="submit" block>Save</button>
+</form>
+
